@@ -12,6 +12,6 @@ where a.RankingNum = 3
 and a.Accepted = 1
 --3) Show me the average amount of days it took for students to recieve an interview once we recieved their application, per student ranking.
 --For the students who didn't yet recieve an interview, calculate the average days from the current date.
-select AvgDaysToRecieveInterview = avg(datediff(day, a.ReceivedDate, isnull(a.InterviewDate, getdate()))), a.RankingDesc
+select AvgDaysToRecieveInterview = avg(datediff(day, a.ReceivedDate, isnull(a.InterviewDate, getdate()))), a.RankingNum
 from Applicant a 
-group by a.rankingDesc
+group by a.RankingNum
